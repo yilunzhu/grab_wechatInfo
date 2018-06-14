@@ -3,8 +3,7 @@ import itchat, sys, re
 from collections import defaultdict
 import thulac, nltk
 from langdetect import detect
-from wordcloud import WordCloud
-import matplotlib.pyplot as plt
+from pyecharts import Pie
 
 
 def send(user_dict):
@@ -29,9 +28,8 @@ def sex(user_dict):
         else:
             other += 1
             print(info["RemarkName"])
-    print("好友总数=%s" % int(total))
-    print("男性好友=%s，女性好友=%s，未标明性别好友=%s" % (male, female, other))
-    print("男性好友占比=%s，女性好友占比=%s" % (male / total, female / total))
+    return male, female, other
+
 
 
 def signature(user_dict):
@@ -83,8 +81,21 @@ if __name__ == '__main__':
     opt = sys.argv[1]
     if opt == "send":
         send(user_dict)
-    elif opt == "sex":
-        sex(user_dict)
+    elif opt == "gender":
+        male, female, other = sex(user_dict)
+        total = male + female + other
+        print("好友总数=%s" % int(total))
+        print("男性好友=%s，女性好友=%s，未标明性别好友=%s" % (male, female, other))
+        print("男性好友占比=%s，女性好友占比=%s" % (male / total, female / total))
+        username = user_dict[0]['NickName']
+        pie = Pie("微信用户%s性别分布" % username, title_pos="center")
+        attr = ['男性好友', '女性好友', '未标明性别好友']
+        v1 = [male, female, other]
+        pie.add("", attr, v1, radius=[40, 75], rosetype="radius", is_label_show=True, legend_orient='vertical',
+                legend_pos='left')
+        # pie.render(path="%s.png" % username)
+        pie.render()
+
     elif opt == "signature":
         signature(user_dict)
     else:
