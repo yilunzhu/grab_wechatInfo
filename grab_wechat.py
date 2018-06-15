@@ -103,7 +103,7 @@ if __name__ == '__main__':
         wordcloud.add("", name, value, word_size_range=[30, 100],
                       shape='diamond')
         wordcloud.render()'''
-    elif opt == "map":
+    elif opt == "cmap":
         region_list = Counter()
         for friend in user_dict[1:]:
             search = re.search('[a-zA-Z]', friend['Province'])

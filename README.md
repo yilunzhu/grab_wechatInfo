@@ -15,7 +15,7 @@ The function collects the number of male, female, and other (unspecified) and co
 
 # Run collect geographical distribution of your wechat friends. (China only)
 ```python
-python grab_wechat.py map
+python grab_wechat.py cmap
 ```
 This function returns a html file of the geographical distribution of your friends on the map of China.
 
