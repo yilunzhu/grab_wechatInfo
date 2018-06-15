@@ -1,5 +1,5 @@
 # grab_wechatInfo
-This script uses itchat module to achieve three basic functions: 
+This script uses itchat module to achieve four basic functions: 
 
 # Run send message. 
 ```python
@@ -11,7 +11,7 @@ Inputted the remark name and the message, the function will send it to that pers
 ```python
 python grab_wechat.py gender
 ```
-The function collects the number of male, female, and other (unspecified) and compute the proportion of each sex. It renders a html file to visualize gender distribution.
+The function collects the number of male, female, and other (unspecified) and compute the proportion of each gender. It renders a html file to visualize gender distribution.
 
 # Run collect geographical distribution of your wechat friends. (China only)
 ```python
