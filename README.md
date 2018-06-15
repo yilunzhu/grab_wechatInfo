@@ -1,24 +1,25 @@
 # grab_wechatInfo
 This script uses itchat module to achieve three basic functions: 
 
-# Send message. 
+# Run send message. 
 ```python
 python grab_wechat.py send
 ```
 Inputted the remark name and the message, the function will send it to that person. If the input is "" or the it equals to the user's name, the function will send the message to the user. Later, send image/file will be added to this script.
 
-# Collect gender info. 
+# Run collect gender info. 
 ```python
 python grab_wechat.py gender
 ```
-The function collects the number of male, female, and other (unspecified) and compute the proportion of each sex.
+The function collects the number of male, female, and other (unspecified) and compute the proportion of each sex. It renders a html file to visualize gender distribution.
 
-# Collect geographical distribution of your wechat friends. (China only)
+# Run collect geographical distribution of your wechat friends. (China only)
 ```python
 python grab_wechat.py map
 ```
+This function returns a html file of the geographical distribution of your friends on the map of China.
 
-# collect "what's up" info from all of your friends. 
+# Run collect "what's up" info from all of your friends. 
 ```python
 python grab_wechat.py signature
 ```
